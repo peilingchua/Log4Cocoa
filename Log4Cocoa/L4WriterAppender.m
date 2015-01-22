@@ -81,12 +81,12 @@ static NSData *lineBreakChar;
         return NO;
     }
 
-    if (_fileHandle) {
+    if (!_fileHandle) {
         [L4LogLog error:[@"No file handle for output stream set for the appender named:" stringByAppendingString:self.name]];
         return NO;
     }
 
-    if (self.layout) {
+    if (!self.layout) {
         [L4LogLog error:[@"No layout set for the appender named:" stringByAppendingString:self.name]];
         return NO;
     }
